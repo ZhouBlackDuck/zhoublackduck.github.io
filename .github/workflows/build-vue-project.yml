@@ -51,4 +51,10 @@ jobs:
 
       - name: Copy production artifacts
         run: |
-          /bin/cp -vrf ./src/dist ./
+          /bin/cp -rf ./src/dist ./
+
+      - name: Push production artifacts
+        run: |
+          git add dist
+          git commit -m "action commit"
+          git push origin/out
