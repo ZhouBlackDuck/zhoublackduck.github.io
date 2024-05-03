@@ -57,4 +57,4 @@ jobs:
         run: |
           git add dist
           git commit -m "action commit"
-          git push origin/out
+          git push origin HEAD:out
