@@ -41,10 +41,9 @@ jobs:
           retention-days: 1
 
       - name: Check out the repository
-        uses: actions/checkout@v4
-        with:
-          ref: out
+        run: |
+          git checkout out
 
       - name: Move production artifacts
         run: |
-          mv -vf ./src/dist ./dist
+          mv -vf src/dist ./dist
