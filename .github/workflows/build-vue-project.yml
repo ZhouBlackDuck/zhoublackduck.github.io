@@ -38,3 +38,4 @@ jobs:
         with:
           name: dist
           path: src/dist
+          retention-days: 1
