@@ -57,6 +57,7 @@ jobs:
       - name: Push production artifacts
         run: |
           git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-          echo "#!/bin/bash \n if [[ (git status --porcelain) ]]; then \n git add dist \n git commit -m\"action commit\" \n git push origin \n fi" > push.sh
+          echo -e "#!/bin/bash \n if [[ (git status --porcelain) ]]; then \n echo \"has changed\" \n git add dist \n git commit -m\"action commit\" \n git push origin \n else echo \"nothing to commit\" \n fi" > push.sh
           cat push.sh
           chmod +x push.sh
+          ./push.sh
