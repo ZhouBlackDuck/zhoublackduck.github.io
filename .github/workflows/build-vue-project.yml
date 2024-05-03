@@ -56,8 +56,6 @@ jobs:
 
       - name: Push production artifacts
         run: |
-          git status
-          git add dist
-          git commit -m "action commit"
           git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-          git push origin
+          echo "#!/bin/bash\nif [[ (git status --porcelain) ]]; then\nfi" > push.sh
+          cat push.sh
