@@ -29,7 +29,9 @@ jobs:
           npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          cd src
+          npm run build
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
