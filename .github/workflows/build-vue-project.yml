@@ -39,3 +39,8 @@ jobs:
           name: dist
           path: src/dist
           retention-days: 1
+
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          ref: out
