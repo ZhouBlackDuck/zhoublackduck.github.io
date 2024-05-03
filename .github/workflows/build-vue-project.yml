@@ -51,4 +51,4 @@ jobs:
 
       - name: Move production artifacts
         run: |
-          mv -vf src/dist ./dist
+          mv -vf ./src/dist ./
