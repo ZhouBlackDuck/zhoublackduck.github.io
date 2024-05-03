@@ -44,7 +44,9 @@ jobs:
         run: |
           git remote -v
           git branch -a
-          git checkout out
+          git fetch origin
+          git branch -a
+          git checkout -b out origin/out
 
       - name: Move production artifacts
         run: |
