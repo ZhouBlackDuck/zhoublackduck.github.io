@@ -24,7 +24,7 @@ jobs:
           cache-dependency-path: src/package-lock.json
 
       - name: Enter the project directory
-        run: cd src
+        run: cd ./src
 
       - name: Install dependencies
         run: npm install
