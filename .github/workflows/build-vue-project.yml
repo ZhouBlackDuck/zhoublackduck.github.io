@@ -49,6 +49,6 @@ jobs:
           git commit -m "action commit"
           git checkout -b out origin/out
 
-      - name: Move production artifacts
+      - name: Copy production artifacts
         run: |
-          mv -vf ./src/dist ./
+          /bin/cp -vrf ./src/dist ./
