@@ -16,6 +16,9 @@ jobs:
       contents: write
       actions: write
 
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
