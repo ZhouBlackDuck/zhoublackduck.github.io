@@ -45,6 +45,7 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git fetch origin
+          git add src/package-lock.json
           git commit -m "action commit"
           git checkout -b out origin/out
 
