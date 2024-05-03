@@ -57,4 +57,5 @@ jobs:
         run: |
           git add dist
           git commit -m "action commit"
+          git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           git push origin HEAD:out
