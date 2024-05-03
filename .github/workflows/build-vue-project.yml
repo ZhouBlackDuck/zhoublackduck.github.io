@@ -42,11 +42,8 @@ jobs:
 
       - name: Check out the repository
         run: |
-          cd src
-          ls
-          cd ..
           git fetch origin
-          git branch -a
+          git commit -m "action commit"
           git checkout -b out origin/out
 
       - name: Move production artifacts
