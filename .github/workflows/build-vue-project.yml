@@ -23,11 +23,10 @@ jobs:
           cache: 'npm'
           cache-dependency-path: src/package-lock.json
 
-      - name: Enter the project directory
-        run: cd ./src
-
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd src
+          npm install
 
       - name: Build project
         run: npm run build
