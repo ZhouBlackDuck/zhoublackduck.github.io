@@ -42,7 +42,7 @@ jobs:
 
       - name: Check out the repository
         run: |
-          ls
+          ls -R
           git fetch origin
           git branch -a
           git checkout -b out origin/out
