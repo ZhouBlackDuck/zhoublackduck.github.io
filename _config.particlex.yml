@@ -1,3 +1,13 @@
 # Footer Info
 footer:
   since: 2024
+
+# Side info card
+card:
+  enable: true
+  description: |
+    Description
+    ...
+  iconLinks:
+  friendLinks:
+    ZhouBlackDuck: https://zhoublackduck.github.io
