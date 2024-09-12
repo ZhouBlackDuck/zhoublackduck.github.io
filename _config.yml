@@ -7,9 +7,11 @@ title: 疯言疯语
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
-timezone: ''
+author: 周文峰
+language:
+  - zh-CN
+  - en
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
