@@ -6,8 +6,8 @@ footer:
 card:
   enable: true
   description: |
-    Description
-    ...
+    疯疯癫癫，一笑一天
+    （笑不出来版）
   iconLinks:
   friendLinks:
     ZhouBlackDuck: https://zhoublackduck.github.io
@@ -37,3 +37,6 @@ menu:
 
 # Avatar image
 avatar: /images/avatar.png
+
+# Loading image
+loading: /images/hertaa_loading.gif
