@@ -34,3 +34,6 @@ menu:
     name: tags
     theme: solid
     link: /tags
+
+# Avatar image
+avatar: /images/avatar.png
