@@ -11,3 +11,26 @@ card:
   iconLinks:
   friendLinks:
     ZhouBlackDuck: https://zhoublackduck.github.io
+
+# Main menu navigation
+menu:
+  主页:
+    name: house
+    theme: solid
+    link: /
+  关于:
+    name: id-card
+    theme: solid
+    link: /about
+  归档:
+    name: box-archive
+    theme: solid
+    link: /archives
+  目录:
+    name: bookmark
+    theme: solid
+    link: /categories
+  标签:
+    name: tags
+    theme: solid
+    link: /tags
