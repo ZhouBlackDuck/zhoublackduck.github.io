@@ -104,3 +104,6 @@ theme: particlex
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# Convert markdown image path
+hexo-asset-folder: true
