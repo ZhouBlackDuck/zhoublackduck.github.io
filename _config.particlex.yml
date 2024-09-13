@@ -26,7 +26,7 @@ menu:
     name: box-archive
     theme: solid
     link: /archives
-  目录:
+  分类:
     name: bookmark
     theme: solid
     link: /categories
