@@ -40,3 +40,7 @@ avatar: /images/avatar.png
 
 # Loading image
 loading: /images/hertaa_loading.gif
+
+# Home page background image
+background:
+  - /images/background.png
