@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set Timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          timedatectl
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
