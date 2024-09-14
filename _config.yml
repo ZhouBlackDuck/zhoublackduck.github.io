@@ -108,4 +108,3 @@ deploy:
 # Archive Generator
 archive_generator:
   enabled: true
-  daily: true
