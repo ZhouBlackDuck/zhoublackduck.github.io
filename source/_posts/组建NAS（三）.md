@@ -1,5 +1,5 @@
 ---
-titel: 组建NAS（三）
+title: 组建NAS（三）
 date: 2024-09-23
 categories: 记录
 tags:
@@ -62,11 +62,6 @@ tags:
                qname(geosite:cn) -> alidns
                fallback: googledns
            }
-       }
-       routing {
-           request {
-               fallback: alidns
-           }
            response {
                upstream(googledns) -> accept
                ip(geoip:private) && !qname(geosite:cn) -> googledns
@@ -107,11 +102,11 @@ tags:
 
    ```bash
    sudo docker run -d --net host \
-   	-e FTP_LIST="admin:<password>" \
-   	-e MASQUERADE_ADDRESS=<serverIP> \
-   	-v /path_to_ftp_dir:/home/admin \
-   	--name proftpd \
-   	kibatic/proftpd:latest
+       -e FTP_LIST="admin:<password>" \
+       -e MASQUERADE_ADDRESS=<serverIP> \
+       -v /path_to_ftp_dir:/home/admin \
+       --name proftpd \
+       kibatic/proftpd:latest
    ```
    
 
