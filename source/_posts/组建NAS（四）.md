@@ -303,8 +303,6 @@ tags:
 
 - 给caddy添加nextcloud-aio网卡，dae代理nextcloud-aio网卡
 
-## 安装ftp服务器
+## 后续
 
-- ### 安装proftpd
-
-- 操作同前[同前](组建NAS（三）.md/#安装ftp服务器)
+- 内网DNS太容易断线了，把pihole服务器放到了有公网ip的云服务器上
