@@ -244,7 +244,7 @@ tags:
   sudo docker run -d \
       --restart always \
       --name caddy \
-      -p 80:80 -p 443:443 -p 443:443/udp \
+      -p 80:80 -p 443:443 -p 443:443/udp -p 8443:8443 \
       -v caddy_data:/data \
       -v caddy_config:/config \
       -v /path/to/Caddyfile/Dir:/etc/caddy \
@@ -281,6 +281,13 @@ tags:
   # Caddyfile
   https://<yourSubdomain>.localcert.net:443 {
     reverse_proxy nextcloud-aio网卡的ip:11000
+  }
+  https://<your-nc-domain>:8443 {
+      reverse_proxy https://nextcloud-aio网卡的ip:8080 {
+          transport http {
+              tls_insecure_skip_verify
+          }
+      }
   }
   ```
 
