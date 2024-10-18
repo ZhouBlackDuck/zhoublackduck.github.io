@@ -245,8 +245,8 @@ tags:
       --restart always \
       --name caddy \
       -p 80:80 -p 443:443 -p 443:443/udp -p 8443:8443 \
-      -v caddy_data:/data \
-      -v caddy_config:/config \
+      -v caddy-data:/data \
+      -v caddy-config:/config \
       -v /path/to/Caddyfile/Dir:/etc/caddy \
       caddy
   ```
