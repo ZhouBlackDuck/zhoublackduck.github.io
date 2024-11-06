@@ -550,3 +550,77 @@ Nextcloud本身在图片和影音上并不出色，只是集成方便，于是�
   ```
 
 - 访问`http://server-ip:9000/if/flow/initial-setup/`开启初始化流程
+
+## 系统监控
+
+### 安装Portainer
+
+- 拉取镜像
+
+  ```bash
+  docker pull portainer/portainer-ce
+  ```
+
+- 启动容器
+
+  ```bash
+  docker run -d --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+  ```
+
+### 安装Netdata
+
+- 拉取镜像
+
+  ```bash
+  docker pull netdata/netdata
+  ```
+
+- 运行容器
+
+  ```bash
+  docker run -d --name=netdata \
+    --pid=host \
+    --network=host \
+    -v netdataconfig:/etc/netdata \
+    -v netdatalib:/var/lib/netdata \
+    -v netdatacache:/var/cache/netdata \
+    -v /:/host/root:ro,rslave \
+    -v /etc/passwd:/host/etc/passwd:ro \
+    -v /etc/group:/host/etc/group:ro \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /proc:/host/proc:ro \
+    -v /sys:/host/sys:ro \
+    -v /etc/os-release:/host/etc/os-release:ro \
+    -v /var/log:/host/var/log:ro \
+    -v /var/run/docker.sock:/var/run/docker.sock:ro \
+    -v /run/dbus:/run/dbus:ro \
+    --restart unless-stopped \
+    --cap-add SYS_PTRACE \
+    --cap-add SYS_ADMIN \
+    --security-opt apparmor=unconfined \
+    netdata/netdata
+  ```
+
+## 使用UIforFreedom替换clash
+
+### 安装
+
+  ```bash
+  docker pull ui4freedom/uif:latest # 拉取最新镜像
+  docker run --network host --name uif --privileged --restart unless-stopped -d ui4freedom/uif:latest
+  ```
+
+### 配置
+
+```bash
+docker logs -f uif
+# Password: 92c204a9-3934-4976-96f2-7bbcb338ccf0
+# Web Address: 0.0.0.0:9527
+# API Address: 0.0.0.0:9413
+```
+
+打开网址`ip:9527`配置api后端为`ip:9413`
+
+在入站规则中关闭`系统代理`，根据自己的需要配置入站规则，即连接协议和端口等
+
+在出站规则中添加订阅链接，启用节点，完成
