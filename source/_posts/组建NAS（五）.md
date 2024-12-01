@@ -624,3 +624,26 @@ docker logs -f uif
 在入站规则中关闭`系统代理`，根据自己的需要配置入站规则，即连接协议和端口等
 
 在出站规则中添加订阅链接，启用节点，完成
+
+## 使用coredns做docker服务发现
+
+### 安装
+
+```bash
+docker pull kevinjqiu/coredns-dockerdiscovery:latest
+docker run -d --name coredns --restart=always -v /path/to/Corefile:/etc/Corefile -v /var/run/docker.sock:/var/run/docker.sock -p 8053:53/udp kevinjqiu/coredns-dockerdiscovery -conf /etc/Corefile
+```
+
+### 配置
+
+```json
+.:53 { # 监听53端口
+    docker { # 使用docker服务发现模块
+        domain docker.loc # 服务域名
+    }
+    log # 使用日志模块
+    errors # 使用错误流模块
+}
+```
+
+如果启用`dae`，需要在`dae`中配置dns和拦截规则
