@@ -4,3 +4,4 @@
 /.idea/
 /*.iml
 /**/package-lock.json
+pandoc
