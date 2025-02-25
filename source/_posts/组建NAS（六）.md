@@ -39,7 +39,7 @@ sudo sysctl -p
 ```json
 {
     "ipv6": true,
-    "fixed-cidr-v6": "fd3a:1b9c:4e2d:fffe::/64",
+    "fixed-cidr-v6": "fd13:a4f3:a0b0::/64",
     "experimental": true,
     "ip6tables": true
 }
